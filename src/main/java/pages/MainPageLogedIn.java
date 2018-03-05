@@ -12,7 +12,7 @@ public class MainPageLogedIn {
     private SelenideElement loggedInSellertName = $(By.xpath("//*[@class='header-top-right']//a[contains(text(),'AutoTest')]"));
     private SelenideElement createdUserName = $(By.xpath("//*[contains(text(),'Auto Test')]"));
     private SelenideElement goToAgentProfile = $(By.xpath("//*[@class='header-top-right']//a[contains(text(),'Profile')]"));
-    private  SelenideElement listForFreeBTN=$(By.xpath("//*[@class='btn-action orange']//*[contains(text(),'List for free')]"));
+
 
     public void moveTologgedInAgentName() throws InterruptedException {
         loggedInAgentName.hover();
@@ -37,9 +37,6 @@ public class MainPageLogedIn {
         createdUserName.should(exist);
         createdUserName.shouldHave(text("Auto Test"));
     }
-    public AddPropertyPage clickListForFree(){
-        listForFreeBTN.shouldBe(enabled).click();
-        return page(AddPropertyPage.class);
-    }
+
 }
 
