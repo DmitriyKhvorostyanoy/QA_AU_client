@@ -9,6 +9,7 @@ import pages.*;
 
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.WebDriverRunner.clearBrowserCache;
+import static constants.Constants.FilePathAgentPropertyPicture;
 import static constants.Constants.FilePathAvatarAgent1;
 
 public class TestAgentActions {
@@ -42,13 +43,12 @@ public class TestAgentActions {
     public void addPropertyByAgentInModalWindow() throws InterruptedException {
 
         agentProfilePage.clickListYourPropertyBtn();
-        agentProfilePage.fillPropertyTitle("Automated Home");
-        agentProfilePage.fillPropertyAdressField("2123 Arroyo Ct, Los Banos, CA, United States");
-        agentProfilePage.fillListingPriceField("123000");
-        agentProfilePage.setListingDate();
-        agentProfilePage.choosePackage();
+        agentProfilePage.fillTextFields(Constants.DescriptionProperty);
+        agentProfilePage.fillChboxesAndDropDownLists();
+        agentProfilePage.addPictureAndVideo(Constants.VirtualToure,FilePathAgentPropertyPicture);
         agentProfilePage.clickSaveButton();
         agentProfilePage.clickCloseBtn();
+
     }
 
     @Test

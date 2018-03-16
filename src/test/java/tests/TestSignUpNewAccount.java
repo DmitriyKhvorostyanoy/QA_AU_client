@@ -4,10 +4,7 @@ import com.codeborne.selenide.Selenide;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import pages.BuyerProfilePage;
-import pages.MainPage;
-import pages.MainPageLogedIn;
-import pages.SellerProfilePage;
+import pages.*;
 
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.WebDriverRunner.clearBrowserCache;
@@ -16,6 +13,7 @@ public class TestSignUpNewAccount  {
     public  Number randomS = Math.random() * 10000;
     public  String str = new String();
 
+    AgentProfilePage agentProfilePage;
     SellerProfilePage sellerProfilePage;
     BuyerProfilePage buyerProfilePage;
     MainPage mainPage;
@@ -23,6 +21,7 @@ public class TestSignUpNewAccount  {
 
     @Before
     public void SingUpSingIn() {
+        agentProfilePage=new AgentProfilePage();
         sellerProfilePage=new SellerProfilePage();
         buyerProfilePage=new BuyerProfilePage();
         mainPageLogedIn=new MainPageLogedIn();
@@ -56,7 +55,7 @@ public class TestSignUpNewAccount  {
         mainPage.fillSingUpPhone("1234567890");
         mainPage.clickCheckboxIAccept();
         mainPage.submitSignUpForm();
-        mainPageLogedIn.assertCreatedName();
+        agentProfilePage.assertCreatedName();
     }
 
     @Test
@@ -68,11 +67,11 @@ public class TestSignUpNewAccount  {
         mainPage.fillSingUpUserPassword("qwerty");
        // mainPage.clickChekboxIAmLandlord();
         mainPage.fillSingUpFirstName("Auto");
-        mainPage.fillSingUpLastName("Test");
+        mainPage.fillSingUpLastName("Testbbb");
         mainPage.fillSingUpPhone("1234567890");
         mainPage.clickCheckboxIAccept();
         mainPage.submitSignUpForm();
-        sellerProfilePage.assertTitleAndUrl();
+        sellerProfilePage.assertCreatedName();
     }
 
     @Test
@@ -84,11 +83,11 @@ public class TestSignUpNewAccount  {
         mainPage.fillSingUpUserPassword("qwerty");
        // mainPage.clickChekboxIAmLandlord();
         mainPage.fillSingUpFirstName("Auto");
-        mainPage.fillSingUpLastName("Test");
+        mainPage.fillSingUpLastName("TestSmbSD");
         mainPage.fillSingUpPhone("1234567890");
         mainPage.clickCheckboxIAccept();
         mainPage.submitSignUpForm();
-        mainPageLogedIn.assertCreatedName();
+        buyerProfilePage.assertCreatedName();
     }
 
     @After

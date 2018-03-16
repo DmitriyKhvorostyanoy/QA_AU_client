@@ -17,8 +17,6 @@ public class AgentProfilePage {
     private  SelenideElement modalWindowOfProperty = $(By.xpath("//*[@class='modal-body']"));
     private  SelenideElement propertyAdressField = $(By.id("search_areas"));
     private  SelenideElement listingPriceField = $(By.id("transactioninfo-listing_price-disp"));
-    private  SelenideElement listingDateField = $(By.id("transactioninfo-listing_date"));
-    private  SelenideElement listingDateInDatePicker = $(By.xpath("//*[@class='datepicker-days']//*[@class='old day'][1]"));
     private  SelenideElement buttonSavePropertyAddForm = $(By.xpath("//*[@id='add_property_form']//*[contains(text(),'Save')]"));
     private  SelenideElement checkPackage  = $(By.xpath("//*[@class='fa fa-check-circle']"));
     private  SelenideElement selectHighlitghtedAdress = $(By.xpath("//*[@class='select2-highlighted']"));
@@ -56,10 +54,88 @@ public class AgentProfilePage {
     private SelenideElement getMatchedBTN=$(By.xpath("//*[text()='Get Matched']"));
     private  SelenideElement uploadAgentAvatar=$("#uploadfileform-user_avatar");
     private  SelenideElement saveAvatar=$("#crop-img");
-    private SelenideElement uploadedAvatar=$(By.xpath("//*[@src='https://advantageu.realagentpro.com/img/user/avatar/1518172793_0_pVIjx9MJmWHWZYwoVCqa0vzvAcZMsH.jpg']/parent::div[@id='picture']"));
     private SelenideElement cropImage=$(By.xpath("//*[@id='crop_modal']//*[@class='cr-image']"));
+    private SelenideElement createdUserName = $(By.xpath("//*[contains(text(),'Auto Test')]"));
+    private SelenideElement agentIcon=$(By.xpath("//*[text()='Real Estate Agent']"));
+    private SelenideElement chooseClient=$("#select2-agent-add-property-transaction-id_client-container");
+    private  SelenideElement clientSearchField=$(By.xpath("//*[@class='select2-search__field']"));
+    private  SelenideElement selectHighlightedAgent=$(By.xpath("//*[@class='select2-user-result']"));
+    private  SelenideElement descriptionField=$("#agent-add-property-property-description");
+    private SelenideElement tagsField = $(By.xpath("//*[@class='bootstrap-tagsinput']/input"));
+    private  SelenideElement sQFTfield=$("#agent-add-property-property-square_feet");
+    private  SelenideElement sellingpriceField=$("#agent-add-property-transactioninfo-listing_price-disp");
+    private SelenideElement chBo1=$(By.xpath("//*[@id='agent-add-property-property-features']/label[7]"));
+    private SelenideElement chBo2=$(By.xpath("//*[@id='agent-add-property-property-features']/label[10]"));
+    private SelenideElement chBo3=$(By.xpath("//*[@id='agent-add-property-property-features']/label[2]"));
+    private SelenideElement chBo4=$(By.xpath("//*[@id='agent-add-property-property-features']/label[14]"));
+    private SelenideElement chBo5=$(By.xpath("//*[@id='agent-add-property-property-features']/label[4]"));
+    private  SelenideElement increaseBads=$("#agent-add-property-property-beds ~ .input-group-addon[onclick*=inc]");
+    private SelenideElement increaseGarage = $("#agent-add-property-property-garage ~ .input-group-addon[onclick*=inc]");
+    private SelenideElement increaseBaths = $("#agent-add-property-property-baths ~ .input-group-addon[onclick*=inc]");
+    private SelenideElement step2PropertyTypeConteiner = $("#select2-agent-add-property-property-id_type-container");
+    private SelenideElement choosePrprtyType = $(By.xpath("//*[@class='select2-results__option'][contains(text(),'Tic')]"));
+    private SelenideElement step2PrprtyCategoryContainer = $("#select2-agent-add-property-property-category_id-container");
+    private SelenideElement choosePrprtyCategory = $(By.xpath("//*[@class='select2-results__option'][contains(text(),'Flats')]"));
+    private SelenideElement choosePackage = $(By.xpath("//*[@class='fa fa-check-circle']"));
+    private SelenideElement listingDateField = $("#agent-add-property-transactioninfo-listing_date-kvdate");
+    private SelenideElement listingDateInDatePicker = $(By.xpath("//*[@class='datepicker-days']//*[@class='old day'][1]"));
+    private  SelenideElement activePropertyBTN=$("#agent-add-property-transaction-status");
+    private  SelenideElement modalTitle=$(By.xpath("//*[text()='List Your Property']"));
+    private SelenideElement uploadIMG = $("#agent-add-property-uploadpropertygalleryimage-images");
+    private SelenideElement virtualTour = $("#agent-add-property-property-virtual_tour");
+
+    public void addPictureAndVideo(String VirtualToure, String FilePathAgentPropertyPicture) throws InterruptedException {
+
+        File file = new File(FilePathAgentPropertyPicture);
+
+        uploadIMG.uploadFile(file);
+        Thread.sleep(1000);
+        // videoURL.setValue("https://youtu.be/_yT4jWFdHbg");
+        virtualTour.shouldBe(visible).setValue(VirtualToure);
+    }
+
+    public void fillTextFields(String DescriptionProperty) throws InterruptedException {
+        modalWindowOfProperty.shouldBe(enabled);
+        chooseClient.click();
+        clientSearchField.sendKeys("testSell");
+        selectHighlightedAgent.click();
+        propertyTitleField.sendKeys("Automated Home");
+        propertyAdressField.sendKeys("901 N Rexford Dr, Beverly Hills, CA 90210, USA");
+        Thread.sleep(1000);
+        selectHighlitghtedAdress.shouldBe(visible).click();
+        descriptionField.setValue(DescriptionProperty);
+        tagsField.setValue("Luxurious").pressEnter().setValue("Landscaped").pressEnter().setValue("Impeccable").pressEnter().setValue("Captivating").pressEnter();
+        sQFTfield.setValue("124");
+        sellingpriceField.setValue("100000");
+            }
+    public void fillChboxesAndDropDownLists(){
+        Selenide.executeJavaScript("arguments[0].scrollIntoView(true);", modalTitle);
+        step2PropertyTypeConteiner.shouldBe(visible).click();
+        choosePrprtyType.click();
+        step2PrprtyCategoryContainer.click();
+        choosePrprtyCategory.click();
+        increaseBads.click();
+        increaseBads.click();
+        increaseGarage.click();
+        increaseBaths.click();
+        increaseBaths.click();
+        chBo1.click();
+        chBo2.click();
+        chBo3.click();
+        chBo4.click();
+        chBo5.click();
+        choosePackage.click();
+        listingDateField.click();
+        listingDateInDatePicker.shouldBe(visible).click();
+        activePropertyBTN.click();
+    }
 
 
+    public void assertCreatedName() {
+        agentIcon.should(exist);
+        createdUserName.should(exist);
+        createdUserName.shouldHave(text("Auto Test"));
+    }
     public  void changeAvatar(String FilePathAvatar2,String FilePathAvatar1) throws InterruptedException {
 
         File file = new File(FilePathAvatar2);

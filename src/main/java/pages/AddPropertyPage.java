@@ -98,7 +98,7 @@ public class AddPropertyPage {
         prprtyDescriptionField.setValue(DescriptionProperty);
         tagsField.setValue("Luxurious").pressEnter().setValue("Landscaped").pressEnter().setValue("Impeccable").pressEnter().setValue("Captivating").pressEnter();
         Selenide.executeJavaScript("arguments[0].scrollIntoView(true);", listingPriceTitle);
-        listingPrice.setValue("10000000");
+        listingPrice.setValue("1000000");
         listingDateField.click();
         listingDateInDatePicker.shouldBe(visible).click();
         btnNextStep3.click();
@@ -110,6 +110,7 @@ public class AddPropertyPage {
         adressField.shouldBe(visible).click();
         adressField.clear();
         adressField.setValue("200, Keawe Street, Honolulu, HI");
+        Thread.sleep(1000);
         selectHighlightedAdress.shouldBe(visible).click();
 
         Selenide.executeJavaScript("arguments[0].scrollIntoView(true);", btnNextStep4);

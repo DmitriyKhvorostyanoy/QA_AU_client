@@ -134,7 +134,7 @@ public class MainPage {
     public void submitSignUpForm() throws InterruptedException {
         submitSignUpForm.click();
         //Selenide.executeJavaScript("arguments[0].click();",submitSignUpForm);
-       //Thread.sleep(300000000);
+      Thread.sleep(3000);
         //
         //return page(SellerProfilePage.class);
         // createdUserName.shouldBe(visible);
