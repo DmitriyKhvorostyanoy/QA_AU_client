@@ -110,7 +110,7 @@ public class AddPropertyPage {
         adressField.shouldBe(visible).click();
         adressField.clear();
         adressField.setValue("200, Keawe Street, Honolulu, HI");
-        Thread.sleep(1000);
+       // Thread.sleep(1000);
         selectHighlightedAdress.shouldBe(visible).click();
 
         Selenide.executeJavaScript("arguments[0].scrollIntoView(true);", btnNextStep4);

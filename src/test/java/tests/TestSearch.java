@@ -36,7 +36,7 @@ AgentSearchResaltPage agentSearchResaltPage;
     }
 
     @Test
-    public void invalidEmailCreatingUaccountBySearch()  {
+    public void invalidEmailCreatingUaccountBySearch() throws InterruptedException {
         searchPage.fillEmailField("autotest"+ randomS.toString() + "2@list.ruu");
         searchPage.fillPhoneField("1111111111");
         searchPage.fillUserFirstName("Auto");
@@ -46,13 +46,14 @@ AgentSearchResaltPage agentSearchResaltPage;
     }
 
     @Test
-    public void searchMain()  {
-        searchPage.fillEmailField("autotest"+ randomS.toString() + "2@list.ru");
+    public void searchMain() throws InterruptedException {
+        searchPage.fillEmailField("testermolov+"+ randomS.toString() + "@gmail.com");
         searchPage.fillPhoneField("1234567890");
         searchPage.fillUserFirstName("Auto");
         searchPage.fillUserlastName("Test");
         searchPage.clickGenerateMatchesButton();
        agentSearchResaltPage.assertCreatedAccountname();
+
     }
 
     @Test

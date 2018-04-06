@@ -1,5 +1,6 @@
 package pages;
 
+import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.By;
 
@@ -15,21 +16,27 @@ public class AgentSearchResaltPage {
     private SelenideElement agentFoundByAnotherAgent=$(By.xpath("//*[@class='result-table']//*[text()='Automation Bot']"));
 private SelenideElement alertuserAdded=$(By.xpath("//*[contains(text(),'User added')]"));
     public void backToAgentProfile ()  {
-
-        loggedInAgentName.hover();
-        goToAgentProfile.shouldBe(visible).click();
+        Selenide.executeJavaScript("arguments[0].click();", loggedInAgentName);
+        Selenide.executeJavaScript("arguments[0].click();", goToAgentProfile);
+       // иногда алерт про успешное добавл агента в друзья перекрывает меню с агентом сппправа вверху поетому используюю жаваскрипт
+        // loggedInAgentName.hover();
+       // goToAgentProfile.shouldBe(visible).click();
     }
 
 
-    public void assertCreatedAccountname(){
+    public void assertCreatedAccountname()  {
         logedInClientName.shouldHave(text("Auto Test"));
+
+
     }
 
-    public  void assertPresenceOfDesiredAgentAndClickAddToMatches(){
-     desiredAgent.should(exist);
-     addToMatchesDesiredAgent.click();
-        alertuserAdded.should(disappear);
-}
+    public  void assertPresenceOfDesiredAgentAndClickAddToMatches() {
+        desiredAgent.should(exist);
+        addToMatchesDesiredAgent.click();
+        //alertuserAdded.should(disappears);
+
+    }
+
     public void assertResaltsSerchByAgent(){
         agentFoundByAnotherAgent.should(exist);
     }

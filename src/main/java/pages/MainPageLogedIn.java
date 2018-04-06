@@ -8,14 +8,14 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.page;
 
 public class MainPageLogedIn {
-    private SelenideElement loggedInAgentName = $(By.xpath("//a[contains(text(),'Test Ermolov')]"));
+    private SelenideElement loggedInAgentName = $(By.xpath("//*[@class='logged-in'][text()='Test Ermolov']"));
     private SelenideElement loggedInSellertName = $(By.xpath("//*[@class='header-top-right']//a[contains(text(),'AutoTest')]"));
     private SelenideElement createdUserName = $(By.xpath("//*[contains(text(),'Auto Test')]"));
     private SelenideElement goToAgentProfile = $(By.xpath("//*[@class='header-top-right']//a[contains(text(),'Profile')]"));
 
 
     public void moveTologgedInAgentName() throws InterruptedException {
-        loggedInAgentName.hover();
+        loggedInAgentName.should(exist).hover();
         goToAgentProfile.shouldBe(visible) ;
     }
     public void goToAgentProfile() throws InterruptedException {

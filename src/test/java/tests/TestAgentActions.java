@@ -35,7 +35,7 @@ public class TestAgentActions {
         open("https://advantageu.realagentpro.com");
 
         mainPage.loginAsAgent();
-        mainPageLogedIn.goToAgentProfile();
+       // mainPageLogedIn.goToAgentProfile();
     }
 
 
@@ -81,7 +81,7 @@ public class TestAgentActions {
         searchPage.openBarMatches();
         searchPage.assertPrivateAgentPresense();
         mainPage.loginAsAgent();
-        mainPageLogedIn.goToAgentProfile();
+        //mainPageLogedIn.goToAgentProfile();
         agentProfilePage.setPublicAccount();
         agentProfilePage.logoutFromProfile();
         mainPage.fillAndSubmitSearchField();

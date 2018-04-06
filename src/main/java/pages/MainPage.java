@@ -4,6 +4,7 @@ import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Condition.enabled;
+import static com.codeborne.selenide.Condition.exist;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 
@@ -28,7 +29,7 @@ public class MainPage {
     private SelenideElement fieldSignUpLastName = $("#modal-registration-userprofile-last_name");
 
     private SelenideElement fieldSignUpPhone = $("#login_user_phone_number");
-    private SelenideElement checkboxIAccept = $(By.xpath("//*[contains(text(),'I accept Advantage')]"));
+    private SelenideElement checkboxIAccept = $(By.xpath("//*[@for='ifAccepted']"));
     private SelenideElement submitSignUpForm = $(By.xpath("//*[@id='login_open']/descendant::*[text()='Submit'][2]"));
 
     private SelenideElement selectSeller = $(By.xpath("//*[@class='select2-results__option'][contains(text(),'Seller')]"));
@@ -43,8 +44,12 @@ public class MainPage {
     private  SelenideElement selectHighlightedLocation=$(By.xpath("//*[@class='header-top-row']//*[@class='select2-highlighted']"));
    // private  SelenideElement listForFreeBTN= $$(By.className("btn-action orange")).findBy(text("List for free"));
  //   private  SelenideElement listForFreeBTN= $(byText("List for free"));///////            *[@class='btn-action orange']//*[contains(text(),'List for free')]
-   private  SelenideElement listForFreeBTN=$(By.xpath("//*[@class='btn-action orange']//*[contains(text(),'List for free')]"));
+   private  SelenideElement listForFreeBTN=$(By.xpath("//*[@class='btn btn-lg orange']//*[contains(text(),'List for free')]"));
+    private  SelenideElement checkEmailAlert=$(By.xpath("//*[contains(text(),'check your Email')]"));
 
+    public void assertAlert(){
+        checkEmailAlert.should(exist);
+    }
    public void fillAndSubmitSearchField(){
        enterSearchArea("alaska");
        clickSearchButton();
@@ -54,7 +59,7 @@ public class MainPage {
 
     public void loginAsAgent() throws InterruptedException {
         clickLogin();
-        fillLoginFormEmail("test@bk.ru");
+        fillLoginFormEmail("testermolov+1@gmail.com");
         fillLoginFormPassword("123456");
         clickSubmitLoginButton();
     }
@@ -134,7 +139,7 @@ public class MainPage {
     public void submitSignUpForm() throws InterruptedException {
         submitSignUpForm.click();
         //Selenide.executeJavaScript("arguments[0].click();",submitSignUpForm);
-      Thread.sleep(3000);
+      //Thread.sleep(3000);
         //
         //return page(SellerProfilePage.class);
         // createdUserName.shouldBe(visible);

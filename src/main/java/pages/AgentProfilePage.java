@@ -283,7 +283,7 @@ public class AgentProfilePage {
         buttonSavePropertyAddForm.click();
 
         btnClosePropertyAddForm.shouldBe(visible);
-        Thread.sleep(3000);
+       // Thread.sleep(3000);
     }
     public void choosePackage() {
         checkPackage.click();
@@ -291,7 +291,7 @@ public class AgentProfilePage {
 
     public void clickCloseBtn() {
         btnClosePropertyAddForm.click();
-        btnClosePropertyAddForm.shouldBe(visible);
+        //btnClosePropertyAddForm.shouldBe(visible);
     }
 }
 

@@ -114,9 +114,10 @@ public class SearchPage {
     public void fillUserlastName(String text) {userLustNameField.sendKeys(text);
     }
 
-    public void clickGenerateMatchesButton() {
+    public void clickGenerateMatchesButton() throws InterruptedException {
         generateMatchesButton.shouldBe(enabled);
         generateMatchesButton.click();
+        //Thread.sleep(999999999);
     }
 
     public void alertMassageWrongEmail() {
