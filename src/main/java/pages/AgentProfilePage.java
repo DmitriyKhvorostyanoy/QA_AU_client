@@ -239,7 +239,8 @@ public class AgentProfilePage {
         //deleteFavProp.click();
         Thread.sleep(2000);
         addedPropToFav.shouldNot(exist);
-        doneEditedFavorites.click();
+        Selenide.executeJavaScript("arguments[0].click();", doneEditedFavorites);
+        //doneEditedFavorites.click();
         Selenide.refresh();
     }
     public  void dragAndDropPrprtyToDownZone(String JsDragAndDrop){
