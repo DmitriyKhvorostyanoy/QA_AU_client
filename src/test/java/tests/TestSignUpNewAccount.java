@@ -58,7 +58,7 @@ public class TestSignUpNewAccount  {
         mainPage.submitSignUpForm();
         //Thread.sleep(99999);
         //agentProfilePage.assertCreatedName();
-       // mainPage.assertAlert();
+        mainPage.assertAlert();
     }
 
     @Test

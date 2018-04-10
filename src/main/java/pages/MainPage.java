@@ -3,9 +3,7 @@ package pages;
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.By;
 
-import static com.codeborne.selenide.Condition.enabled;
-import static com.codeborne.selenide.Condition.exist;
-import static com.codeborne.selenide.Condition.visible;
+import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.$;
 
 public class MainPage {
@@ -45,10 +43,12 @@ public class MainPage {
    // private  SelenideElement listForFreeBTN= $$(By.className("btn-action orange")).findBy(text("List for free"));
  //   private  SelenideElement listForFreeBTN= $(byText("List for free"));///////            *[@class='btn-action orange']//*[contains(text(),'List for free')]
    private  SelenideElement listForFreeBTN=$(By.xpath("//*[@class='btn btn-lg orange']//*[contains(text(),'List for free')]"));
-    private  SelenideElement checkEmailAlert=$(By.xpath("//*[contains(text(),'check your Email')]"));
+    private  SelenideElement checkEmailAlert=$(By.xpath("//*[@class='content']//*[@class='message-wrapp']"));
 
     public void assertAlert(){
-        checkEmailAlert.should(exist);
+
+
+        checkEmailAlert.shouldHave(exactText("Account created!\n" + "Activation link was sent to you. Thank you!"));
     }
    public void fillAndSubmitSearchField(){
        enterSearchArea("alaska");
