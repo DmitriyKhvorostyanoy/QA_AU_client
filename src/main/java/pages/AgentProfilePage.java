@@ -220,6 +220,7 @@ public class AgentProfilePage {
     }
 
     public  void dragAndDropPrprtyToSideZone(String JsDragAndDrop) throws InterruptedException {
+        Selenide.executeJavaScript("arguments[0].scrollIntoView(true);", prprtyContainer);
         Selenide.executeJavaScript(JsDragAndDrop ,new Object[]{prprtyContainer, sideDropZone});
        Thread.sleep(1000);
         Selenide.executeJavaScript("arguments[0].scrollIntoView(true);", sideDropZone);
@@ -234,8 +235,8 @@ public class AgentProfilePage {
         editFavorites.click();
         // Thread.sleep(1000);
         deleteFavProp.should(exist);
-        //Selenide.executeJavaScript("arguments[0].click();", deleteFavProp);
-        deleteFavProp.click();
+        Selenide.executeJavaScript("arguments[0].click();", deleteFavProp);
+        //deleteFavProp.click();
         Thread.sleep(2000);
         addedPropToFav.shouldNot(exist);
         doneEditedFavorites.click();
