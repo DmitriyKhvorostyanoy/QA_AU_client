@@ -108,6 +108,7 @@ public class TestAgentActions {
 
     @Test
     public void searchByLoggedInAgent() throws InterruptedException {
+
         agentProfilePage.clickGETMatched();
         searchPage.fillAreaModifyField("Hawaii, United States");
         searchPage.passSearchStepsByLogedUseer();

@@ -154,7 +154,8 @@ public class AgentProfilePage {
 
     }
     public void clickGETMatched(){
-        getMatchedBTN.click();
+
+        getMatchedBTN.shouldBe(exist).click();
     }
 
     public  void checkForAbsenceOfProp(){
