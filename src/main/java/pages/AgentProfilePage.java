@@ -171,11 +171,13 @@ public class AgentProfilePage {
     }
 
     public void propertyPublicModeOn(){
+        moreReviewsBTN.should(exist);
         Selenide.executeJavaScript("arguments[0].scrollIntoView(true);", moreReviewsBTN);
         publicPropertyModeOnOff.click();
     }
 
     public void propertyPublicModeOff(){
+        moreReviewsBTN.should(exist);
         Selenide.executeJavaScript("arguments[0].scrollIntoView(true);", moreReviewsBTN);
         publicPropertyModeOnOff.click();
     }
