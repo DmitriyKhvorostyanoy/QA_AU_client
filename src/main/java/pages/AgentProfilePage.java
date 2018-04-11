@@ -153,9 +153,11 @@ public class AgentProfilePage {
         Thread.sleep(2000);
 
     }
-    public void clickGETMatched(){
+    public void clickGETMatched() throws InterruptedException {
+        Thread.sleep(2000);
+        getMatchedBTN.should(exist);
+        Selenide.executeJavaScript("arguments[0].click();", getMatchedBTN);
 
-        getMatchedBTN.shouldBe(exist).click();
     }
 
     public  void checkForAbsenceOfProp(){
