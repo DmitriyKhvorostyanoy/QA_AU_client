@@ -4,6 +4,7 @@ import com.codeborne.selenide.Selenide;
 import constants.Constants;
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import pages.*;
 
@@ -73,7 +74,8 @@ public class TestAgentActions {
         agentProfilePage.deleteAgentFromFavorites();
     }
 
-    @Test
+   // @Test
+    @Ignore
     public void checkPrivateStatusOfAgent() throws InterruptedException {
         agentProfilePage.setPrivateAccount();
         agentProfilePage.logoutFromProfile();

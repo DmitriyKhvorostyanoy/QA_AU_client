@@ -1,5 +1,6 @@
 package pages;
 
+import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.By;
 
@@ -76,12 +77,14 @@ public class MainPage {
     }
 
     public void clickLogin() {
-        loginButton.click();
-        signInSignUpModalWindow.shouldBe(visible);
+        Selenide.executeJavaScript("arguments[0].click();", loginButton);
+        //loginButton.click();
+    //    signInSignUpModalWindow.shouldBe(visible);
     }
 
     public void fillLoginFormEmail(String text) {
-        loginFormEmail.clear();
+        loginFormEmail.shouldBe(visible);
+       loginFormEmail.clear();
         loginFormEmail.sendKeys(text);
     }
 

@@ -51,7 +51,7 @@ public class AgentProfilePage {
     private SelenideElement publicPropertyModeOnOff=$("#user-private_property");
     private SelenideElement moreReviewsBTN=$(By.xpath("//*[text()='MORE REVIEWS']"));
     private  SelenideElement h3NoProperties=$(By.xpath("//*[@class='property-container']//*[@class='text-center']"));
-    private SelenideElement getMatchedBTN=$(By.xpath("//*[text()='Get Matched']"));
+    private SelenideElement getMatchedBTN=$(By.xpath("//*[contains(text(),'Get Matched')]"));
     private  SelenideElement uploadAgentAvatar=$("#uploadfileform-user_avatar");
     private  SelenideElement saveAvatar=$("#crop-img");
     private SelenideElement cropImage=$(By.xpath("//*[@id='crop_modal']//*[@class='cr-image']"));
@@ -189,8 +189,8 @@ public class AgentProfilePage {
     }
 
     public void setPrivateAccount(){
-        userStatusContainer.click();
-        selectPrivateStatus.click();
+        userStatusContainer.should(exist).click();
+        selectPrivateStatus.should(exist).click();
             }
     public void logoutFromProfile(){
         loggedInAgentName.hover();

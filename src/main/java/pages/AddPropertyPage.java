@@ -62,7 +62,7 @@ public class AddPropertyPage {
         Selenide.executeJavaScript("arguments[0].scrollIntoView(true);", btnNextStep1);
         //Thread.sleep(1000);
         chooseAgent.click();
-        agentSearchField.sendKeys("ermol");
+        agentSearchField.sendKeys("testermolov+1");
         selectHighlightedAgent.click();
         //Thread.sleep(1000);
 
