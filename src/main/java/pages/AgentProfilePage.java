@@ -144,6 +144,7 @@ public class AgentProfilePage {
       //  Selenide.executeJavaScript("arguments[0].setAttribute('style', 'opacity: 1; transform: translate3d(210.015px, 60.0154px, 0px) scale(0.3608); transform-origin: 139.985px 139.985px 0px;')",cropImage);
         saveAvatar.should(exist).click();
         Thread.sleep(2000);
+        Selenide.refresh();
         File file1 = new File(FilePathAvatar1);
         uploadAgentAvatar.uploadFile(file1);
         Thread.sleep(1000);
@@ -198,7 +199,7 @@ public class AgentProfilePage {
 }
 
     public void searchAgentUsingSearchBarInHeader(){
-        searchFieldOnAgentProfile.setValue("Hawai");
+        searchFieldOnAgentProfile.setValue("Honolulu, HI");
         changeRole.click();
         choseHighlightedRole.click();
         changeProptype.click();

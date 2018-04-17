@@ -30,7 +30,7 @@ AgentSearchResaltPage agentSearchResaltPage;
 
         open("https://advantageu.realagentpro.com");
 
-        mainPage.enterSearchArea("alaska");
+        mainPage.enterSearchArea("anchorage,AK");
         mainPage.clickSearchButton();
         searchPage.passSearchSteps();
     }
@@ -58,7 +58,7 @@ AgentSearchResaltPage agentSearchResaltPage;
 
     @Test
     public void modifySearch() throws InterruptedException  {
-        searchPage.fillAreaModifyField("Hawaii, United States");
+        searchPage.fillAreaModifyField("Honolulu, HI");
         searchPage.changeRole();
         searchPage.changePropertyType();
         searchPage.changeValue();

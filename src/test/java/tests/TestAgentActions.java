@@ -4,7 +4,6 @@ import com.codeborne.selenide.Selenide;
 import constants.Constants;
 import org.junit.After;
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 import pages.*;
 
@@ -74,8 +73,8 @@ public class TestAgentActions {
         agentProfilePage.deleteAgentFromFavorites();
     }
 
-   // @Test
-    @Ignore
+    @Test
+  //  @Ignore
     public void checkPrivateStatusOfAgent() throws InterruptedException {
         agentProfilePage.setPrivateAccount();
         agentProfilePage.logoutFromProfile();
@@ -112,7 +111,7 @@ public class TestAgentActions {
     public void searchByLoggedInAgent() throws InterruptedException {
 
         agentProfilePage.clickGETMatched();
-        searchPage.fillAreaModifyField("Hawaii, United States");
+        searchPage.fillAreaModifyField("Honolulu, HI");
         searchPage.passSearchStepsByLogedUseer();
         agentSearchResaltPage.assertResaltsSerchByAgent();
     }

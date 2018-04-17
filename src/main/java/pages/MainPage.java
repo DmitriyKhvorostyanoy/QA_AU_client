@@ -52,7 +52,7 @@ public class MainPage {
         checkEmailAlert.shouldHave(exactText("Account created!\n" + "Activation link was sent to you. Thank you!"));
     }
    public void fillAndSubmitSearchField(){
-       enterSearchArea("alaska");
+       enterSearchArea("anchorage,AK");
        clickSearchButton();
    }
 
