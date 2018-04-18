@@ -115,7 +115,7 @@ public class AddPropertyPage {
 
         Selenide.executeJavaScript("arguments[0].scrollIntoView(true);", btnNextStep4);
         btnNextStep4.click();
-        Thread.sleep(99999);
+       // Thread.sleep(99999);
 
     }
 

@@ -1,5 +1,6 @@
 package tests;
 
+import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import constants.Constants;
 import org.junit.After;
@@ -19,7 +20,9 @@ public class TestAgentActions {
     MainPage mainPage;
     AgentProfilePage agentProfilePage;
     AgentSearchResaltPage agentSearchResaltPage;
-
+   // public void setUp() {
+   //     Configuration.timeout = 10000;
+  //  }
 
     @Before
     public void SingInAsAgent() throws InterruptedException {
@@ -28,10 +31,11 @@ public class TestAgentActions {
         mainPage = new MainPage();
         agentProfilePage = new AgentProfilePage();
         agentSearchResaltPage=new AgentSearchResaltPage();
-
+       // Configuration.timeout = 8000;
 
         System.setProperty("selenide.browser", "chrome");
         clearBrowserCache();
+        Configuration.timeout = 15000;
         open("https://advantageu.realagentpro.com");
 
         mainPage.loginAsAgent();
