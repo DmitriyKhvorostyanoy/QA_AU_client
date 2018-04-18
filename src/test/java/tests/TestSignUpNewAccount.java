@@ -1,5 +1,6 @@
 package tests;
 
+import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import org.junit.After;
 import org.junit.Before;
@@ -27,9 +28,8 @@ public class TestSignUpNewAccount  {
         mainPageLogedIn=new MainPageLogedIn();
         mainPage=new MainPage();
         System.setProperty("selenide.browser", "chrome");
-
-        //clear cache
-      clearBrowserCache();
+        clearBrowserCache();
+        Configuration.timeout = 15000;
         open("https://advantageu.realagentpro.com");
         mainPage.clickLogin();
     }

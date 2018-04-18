@@ -1,5 +1,6 @@
 package tests;
 
+import com.codeborne.selenide.Configuration;
 import org.junit.Before;
 import pages.AgentProfilePage;
 import pages.AgentSearchResaltPage;
@@ -27,6 +28,7 @@ public class TestSearchProperty {
 
         System.setProperty("selenide.browser", "chrome");
         clearBrowserCache();
+        Configuration.timeout = 15000;
         open("https://advantageu.realagentpro.com");
     }
 }

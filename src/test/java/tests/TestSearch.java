@@ -1,5 +1,6 @@
 package tests;
 
+import com.codeborne.selenide.Configuration;
 import org.junit.Before;
 import org.junit.Test;
 import pages.AgentSearchResaltPage;
@@ -27,7 +28,7 @@ AgentSearchResaltPage agentSearchResaltPage;
         System.setProperty("selenide.browser", "chrome");
 
         clearBrowserCache();
-
+        Configuration.timeout = 15000;
         open("https://advantageu.realagentpro.com");
 
         mainPage.enterSearchArea("anchorage,AK");

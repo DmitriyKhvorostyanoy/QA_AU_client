@@ -13,7 +13,7 @@ public class BaseTest {
     public static void setUp() {
 
        System.setProperty("selenide.browser", "chrome");
-       Configuration.timeout = 10000;
+       Configuration.timeout = 15000;
         //clear cache
         clearBrowserCache();
 open("https://advantageu.realagentpro.com");
