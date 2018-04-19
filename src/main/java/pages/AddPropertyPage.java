@@ -6,6 +6,7 @@ import org.openqa.selenium.By;
 
 import java.io.File;
 
+import static com.codeborne.selenide.Condition.enabled;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.page;
@@ -49,12 +50,12 @@ public class AddPropertyPage {
     private SelenideElement virtualTour = $("#property-virtual_tour");
     private SelenideElement btnNextStep5 = $(By.xpath("//*[@id='step_5']//*[contains(text(),'Next')]"));
     private  SelenideElement payBtn=$(By.xpath("//*[contains(text(),'Pay')]"));
-    private  SelenideElement viewYourFreeListing=$(By.xpath("//*[contains(text(),'VIEW YOUR FREE LISTING')]"));
+    private  SelenideElement viewYourFreeListing=$(By.xpath("//*[text()='VIEW YOUR FREE LISTING']"));
     private  SelenideElement selectHighlightedAgent=$(By.xpath("//*[@class='select2-user-result']"));
     private  SelenideElement selectHighlightedAdress=$(By.xpath("//*[@class='select2-highlighted']"));//*[@class='select2-highlighted']
     private SelenideElement videoTitle=$(By.xpath("//*[contains(text(),'Property Video')]"));
     private  SelenideElement virtualToureTitle=$(By.xpath("//*[contains(text(),'360° Virtual tour')]"));
-
+    private  SelenideElement alertErrorsEmptyOrWrongAdress=$(By.xpath("//*[contains(text(),'Check your information for errors')]"));
 
 
 
@@ -114,9 +115,16 @@ public class AddPropertyPage {
         selectHighlightedAdress.shouldBe(visible).click();
 
         Selenide.executeJavaScript("arguments[0].scrollIntoView(true);", btnNextStep4);
-        btnNextStep4.click();
+        try{
+            btnNextStep4.click();
+        }catch(Exception e){
+            if (alertErrorsEmptyOrWrongAdress.exists()){
+                btnNextStep4.click();
+        }
+       // btnNextStep4.click();
        // Thread.sleep(99999);
 
+        }
     }
 
     public void step5(String VirtualToure, String FilePathPropertyPicture) throws InterruptedException {
@@ -132,9 +140,9 @@ public class AddPropertyPage {
        btnNextStep5.click();
     }
     public SinglePropertyPage step6AndGoTosinglPropertyPage(){
-        payBtn.shouldBe(visible).click();
+        payBtn.shouldBe(enabled).click();
 
-        viewYourFreeListing.shouldBe(visible).click();
+        viewYourFreeListing.waitUntil(enabled,20000).click();
         return page(SinglePropertyPage.class);
     }
 }
