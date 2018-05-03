@@ -8,11 +8,11 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.WebDriverRunner.url;
 
 public class SinglePropertyPage {
-    private SelenideElement titleH1Property=$(By.xpath("//h1[contains(text(),'Automated Home')]"));
+   public static  SelenideElement titleH1Property=$(By.xpath("//h1[contains(text(),'Automated Home')]"));
 
 
 
-    public void assertTitleAndUrl(){
+    public static void assertTitleAndUrl(){
         titleH1Property.shouldHave(text("Automated Home"));
        url().contains("/property/single");
     }

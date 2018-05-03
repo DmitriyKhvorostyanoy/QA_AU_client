@@ -6,6 +6,7 @@ import org.openqa.selenium.By;
 
 import java.io.File;
 
+import static com.codeborne.selenide.Condition.appear;
 import static com.codeborne.selenide.Condition.enabled;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
@@ -59,7 +60,9 @@ public class AddPropertyPage {
 
 
 
+
     public void step1() throws InterruptedException {
+        btnNextStep1.waitUntil(appear,20000);
         Selenide.executeJavaScript("arguments[0].scrollIntoView(true);", btnNextStep1);
         //Thread.sleep(1000);
         chooseAgent.click();
@@ -103,6 +106,7 @@ public class AddPropertyPage {
         listingDateField.click();
         listingDateInDatePicker.shouldBe(visible).click();
         btnNextStep3.click();
+
     }
 
     public void step4() throws InterruptedException {

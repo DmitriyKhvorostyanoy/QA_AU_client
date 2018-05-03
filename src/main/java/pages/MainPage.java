@@ -12,7 +12,6 @@ public class MainPage {
     private SelenideElement mainInputSearchField = $("#searchagent-query");
     private SelenideElement mainSearchButton = $(By.xpath("//button[contains(text(),'Search')]"));
     private SelenideElement loginButton = $(By.xpath("//li[@class='head-login']//*[@class='open-popup-link']"));
-    private SelenideElement signInSignUpModalWindow = $(By.xpath("//div[@class='white-popup-sing']"));
     private SelenideElement loginFormEmail  = $(By.id("modal-registration-loginform-email"));
     private SelenideElement loginFormPassword = $(By.id("modal-registration-loginform-password"));
     private SelenideElement submitLoginFormButton  = $(By.xpath("//*[@id='login_open']/descendant::*[text()='Submit'][1]"));

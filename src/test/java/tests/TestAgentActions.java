@@ -56,13 +56,17 @@ public class TestAgentActions {
     }
 
     @Test
-    public void addPropertyToFavoritesByDragAndDrop() throws InterruptedException {
+    public void addPropertyToFavoritesByDragAndDropSideZone() throws InterruptedException {
         agentProfilePage.dragAndDropPrprtyToSideZone(Constants.JsDragAndDrop);
         agentProfilePage.deletePropFromFavorites();
+
+    }
+
+    @Test
+    public void addPropertyToFavoritesByDragAndDropDownZone() throws InterruptedException {
         agentProfilePage.dragAndDropPrprtyToDownZone(Constants.JsDragAndDrop);
         agentProfilePage.deletePropFromFavorites();
     }
-
     @Test
     public void addPropertyToFavoritesByLike() throws InterruptedException {
         agentProfilePage.likeProperty();

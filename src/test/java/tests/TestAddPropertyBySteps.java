@@ -1,6 +1,10 @@
 package tests;
 
 import constants.Constants;
+import io.qameta.allure.Description;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
+import io.qameta.allure.junit4.DisplayName;
 import org.junit.Before;
 import org.junit.Test;
 import pages.*;
@@ -8,6 +12,7 @@ import pages.*;
 import static constants.Constants.FilePathPropertyPicture;
 
 public class TestAddPropertyBySteps extends BaseTest{
+
     MainPageLogedIn mainPageLogedIn;
     MainPage mainPage;
     AgentProfilePage agentProfilePage;
@@ -34,6 +39,10 @@ public class TestAddPropertyBySteps extends BaseTest{
     }
 
     @Test
+    @DisplayName("Adding a property by buyer/seller")
+    @Description("Passing thru 6 steps of process of adding property")
+    @Severity(SeverityLevel.CRITICAL)
+
     public void addPropertyBySeller6Steps() throws InterruptedException {
 
         addPropertyPage.step1();
@@ -43,5 +52,6 @@ public class TestAddPropertyBySteps extends BaseTest{
         addPropertyPage.step5(Constants.VirtualToure,FilePathPropertyPicture);
         addPropertyPage.step6AndGoTosinglPropertyPage();
         singlePropertyPage.assertTitleAndUrl();
+
     }
 }

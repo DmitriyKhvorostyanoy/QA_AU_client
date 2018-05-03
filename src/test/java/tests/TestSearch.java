@@ -19,7 +19,7 @@ public class TestSearch {
 
     MainPage mainPage;
     SearchPage searchPage;
-AgentSearchResaltPage agentSearchResaltPage;
+AgentSearchResaltPage  agentSearchResaltPage;
     @Before
     public void searchSteps() {
         mainPage=new MainPage();

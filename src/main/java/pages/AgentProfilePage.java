@@ -232,27 +232,27 @@ public class AgentProfilePage {
         Selenide.executeJavaScript("arguments[0].scrollIntoView(true);", sideDropZone);
        // showMore.click();
         addedPropToFav.should(exist);
-        Selenide.refresh();
+        //Selenide.refresh();
            }
     public void deletePropFromFavorites() throws InterruptedException {
-        Selenide.executeJavaScript("arguments[0].scrollIntoView(true);", sideDropZone);
+        //Selenide.executeJavaScript("arguments[0].scrollIntoView(true);", sideDropZone);
         // showMore.click();
         Selenide.executeJavaScript("arguments[0].scrollIntoView(true);", textToSeeBtnEdit);
         editFavorites.click();
-        // Thread.sleep(1000);
+         Thread.sleep(1000);
         deleteFavProp.should(exist);
         Selenide.executeJavaScript("arguments[0].click();", deleteFavProp);
         //deleteFavProp.click();
-        Thread.sleep(2000);
+        //Thread.sleep(2000);
         addedPropToFav.shouldNot(exist);
         Selenide.executeJavaScript("arguments[0].click();", doneEditedFavorites);
         //doneEditedFavorites.click();
-        Selenide.refresh();
+       // Selenide.refresh();
     }
     public  void dragAndDropPrprtyToDownZone(String JsDragAndDrop){
 
     Selenide.executeJavaScript(JsDragAndDrop ,new Object[]{prprtyContainer, downDropzone});
-        prprtyContainer.dragAndDropTo(downDropzone);
+       // prprtyContainer.dragAndDropTo(downDropzone);
     }
 
     public  void likeProperty(){
