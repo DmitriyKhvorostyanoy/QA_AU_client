@@ -3,6 +3,7 @@ package tests;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.logevents.SelenideLogger;
+import customClasses.AllureSelenide;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 
@@ -12,8 +13,8 @@ import static com.codeborne.selenide.WebDriverRunner.clearBrowserCache;
 public class BaseTest {
    @BeforeClass
     public static void setUp() {
-      SelenideLogger.addListener("allure", new customClasses.AllureSelenide());
-       //SelenideLogger.addListener("allure", new AllureSelenide());
+       SelenideLogger.addListener("allure", new AllureSelenide());
+
        System.setProperty("selenide.browser", "chrome");
        Configuration.timeout = 15000;
         //clear cache

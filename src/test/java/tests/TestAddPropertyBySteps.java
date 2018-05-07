@@ -38,10 +38,11 @@ public class TestAddPropertyBySteps extends BaseTest{
        // agentProfilePage.clickListYourPropertyBtn();
     }
 
-    @Test
+
     @DisplayName("Adding a property by buyer/seller")
     @Description("Passing thru 6 steps of process of adding property")
     @Severity(SeverityLevel.CRITICAL)
+    @Test
 
     public void addPropertyBySeller6Steps() throws InterruptedException {
 
