@@ -15,8 +15,6 @@ public class MainPage {
     private SelenideElement loginFormEmail  = $(By.id("modal-registration-loginform-email"));
     private SelenideElement loginFormPassword = $(By.id("modal-registration-loginform-password"));
     private SelenideElement submitLoginFormButton  = $(By.xpath("//*[@id='login_open']/descendant::*[text()='Submit'][1]"));
-
-
     private SelenideElement newAccountTab = $(By.xpath("//*[contains(text(),'New account')]"));
     private SelenideElement UserRoleContainer = $(By.id("select2-modal-registration-user-id_role-container"));
     private SelenideElement selectRealEstateAgent = $(By.xpath("//li[contains(text(),'Real Estate Agent')]"));
@@ -25,24 +23,19 @@ public class MainPage {
     private SelenideElement checkboxIAmLandlord = $(By.xpath("//*[@class='checkbox']//*[@name='agree']"));
     private SelenideElement fieldSingUpFName = $("#modal-registration-userprofile-first_name");
     private SelenideElement fieldSignUpLastName = $("#modal-registration-userprofile-last_name");
-
     private SelenideElement fieldSignUpPhone = $("#login_user_phone_number");
     private SelenideElement checkboxIAccept = $(By.xpath("//*[@for='ifAccepted']"));
     private SelenideElement submitSignUpForm = $(By.xpath("//*[@id='login_open']/descendant::*[text()='Submit'][2]"));
-
     private SelenideElement selectSeller = $(By.xpath("//*[@class='select2-results__option'][contains(text(),'Seller')]"));
     private SelenideElement selectBuyer = $(By.xpath("//li[contains(text(),'Buyer')]"));
     private SelenideElement logoutFromAgentProfile = $(By.xpath("//*[@class='header-top-right']//a[contains(text(),'Logout')]"));
     private SelenideElement goToSellertProfile = $(By.xpath("//*[@class='header-top-right']//a[contains(text(),'Profile')]"));
-
-   private  SelenideElement currentLocationInHeader=$(By.xpath("//*[@class='header-top-row']//*[@class='click-text current_position_matches']"));
+    private  SelenideElement currentLocationInHeader=$(By.xpath("//*[@class='header-top-row']//*[@class='click-text current_position_matches']"));
     private SelenideElement chooseLocationFromList=$(By.xpath("//*[@class='header-top-row']//*[@class='cityChoose-block-name change_location']//a[1]"));
     private SelenideElement inputLacationField=$(By.xpath("//*[@class='header-top-row']//*[@id='change_city_0']"));
     private  SelenideElement submitlocationBTN=$(By.xpath("//*[@class='header-top-row']//*[text()='Submit']"));
     private  SelenideElement selectHighlightedLocation=$(By.xpath("//*[@class='header-top-row']//*[@class='select2-highlighted']"));
-   // private  SelenideElement listForFreeBTN= $$(By.className("btn-action orange")).findBy(text("List for free"));
- //   private  SelenideElement listForFreeBTN= $(byText("List for free"));///////            *[@class='btn-action orange']//*[contains(text(),'List for free')]
-   private  SelenideElement listForFreeBTN=$(By.xpath("//*[@class='btn btn-lg orange']//*[contains(text(),'List for free')]"));
+    private  SelenideElement listForFreeBTN=$(By.xpath("//*[@class='btn btn-lg orange']//*[contains(text(),'List for free')]"));
     private  SelenideElement checkEmailAlert=$(By.xpath("//*[@class='content']//*[@class='message-wrapp']"));
 
     public void assertAlert(){

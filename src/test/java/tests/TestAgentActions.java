@@ -20,9 +20,7 @@ public class TestAgentActions {
     MainPage mainPage;
     AgentProfilePage agentProfilePage;
     AgentSearchResaltPage agentSearchResaltPage;
-   // public void setUp() {
-   //     Configuration.timeout = 10000;
-  //  }
+
 
     @Before
     public void SingInAsAgent() throws InterruptedException {
@@ -82,8 +80,7 @@ public class TestAgentActions {
     }
 
     @Test
-  //  @Ignore
-    public void checkPrivateStatusOfAgent() throws InterruptedException {
+     public void checkPrivateStatusOfAgent() throws InterruptedException {
         agentProfilePage.setPrivateAccount();
         agentProfilePage.logoutFromProfile();
         mainPage.fillAndSubmitSearchField();

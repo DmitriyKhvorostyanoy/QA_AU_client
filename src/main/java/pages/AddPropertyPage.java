@@ -50,13 +50,13 @@ public class AddPropertyPage {
     private SelenideElement videoURL = $("#property-video_url");
     private SelenideElement virtualTour = $("#property-virtual_tour");
     private SelenideElement btnNextStep5 = $(By.xpath("//*[@id='step_5']//*[contains(text(),'Next')]"));
-    private  SelenideElement payBtn=$(By.xpath("//*[contains(text(),'Pay')]"));
-    private  SelenideElement viewYourFreeListing=$(By.xpath("//*[text()='VIEW YOUR FREE LISTING']"));
-    private  SelenideElement selectHighlightedAgent=$(By.xpath("//*[@class='select2-user-result']"));
-    private  SelenideElement selectHighlightedAdress=$(By.xpath("//*[@class='select2-highlighted']"));//*[@class='select2-highlighted']
+    private SelenideElement payBtn=$(By.xpath("//*[contains(text(),'Pay')]"));
+    private SelenideElement viewYourFreeListing=$(By.xpath("//*[text()='VIEW YOUR FREE LISTING']"));
+    private SelenideElement selectHighlightedAgent=$(By.xpath("//*[@class='select2-user-result']"));
+    private SelenideElement selectHighlightedAdress=$(By.xpath("//*[@class='select2-highlighted']"));//*[@class='select2-highlighted']
     private SelenideElement videoTitle=$(By.xpath("//*[contains(text(),'Property Video')]"));
-    private  SelenideElement virtualToureTitle=$(By.xpath("//*[contains(text(),'360° Virtual tour')]"));
-    private  SelenideElement alertErrorsEmptyOrWrongAdress=$(By.xpath("//*[contains(text(),'Check your information for errors')]"));
+    private SelenideElement virtualToureTitle=$(By.xpath("//*[contains(text(),'360° Virtual tour')]"));
+    private SelenideElement alertErrorsEmptyOrWrongAdress=$(By.xpath("//*[contains(text(),'Check your information for errors')]"));
 
 
 
