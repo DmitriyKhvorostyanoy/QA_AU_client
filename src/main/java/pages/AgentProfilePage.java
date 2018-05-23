@@ -83,6 +83,7 @@ public class AgentProfilePage {
     private  SelenideElement modalTitle=$(By.xpath("//*[text()='List Your Property']"));
     private SelenideElement uploadIMG = $("#agent-add-property-uploadpropertygalleryimage-images");
     private SelenideElement virtualTour = $("#agent-add-property-property-virtual_tour");
+    private SelenideElement videoURL=$("#agent-add-property-property-video_url");
 
     public void addPictureAndVideo(String VirtualToure, String FilePathAgentPropertyPicture) throws InterruptedException {
 
@@ -90,7 +91,7 @@ public class AgentProfilePage {
 
         uploadIMG.uploadFile(file);
         Thread.sleep(1000);
-        // videoURL.setValue("https://youtu.be/_yT4jWFdHbg");
+        // videoURL.sendKeys("youtu.be/_yT4jWFdHbg");
         virtualTour.shouldBe(visible).setValue(VirtualToure);
     }
 

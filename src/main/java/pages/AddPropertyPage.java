@@ -138,8 +138,8 @@ public class AddPropertyPage {
        uploadIMG.uploadFile(file);
        Thread.sleep(1000);
        Selenide.executeJavaScript("arguments[0].scrollIntoView(true);", videoTitle);
-      // videoURL.setValue("https://youtu.be/_yT4jWFdHbg");
-      // Selenide.executeJavaScript("arguments[0].scrollIntoView(true);", virtualToureTitle);
+       //videoURL.setValue("https://youtu.be/_yT4jWFdHbg");
+    // Selenide.executeJavaScript("arguments[0].scrollIntoView(true);", virtualToureTitle);
        virtualTour.shouldBe(visible).setValue(VirtualToure);
        btnNextStep5.click();
     }
