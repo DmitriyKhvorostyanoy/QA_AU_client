@@ -30,13 +30,13 @@ public class MainPage {
     private SelenideElement selectBuyer = $(By.xpath("//li[contains(text(),'Buyer')]"));
     private SelenideElement logoutFromAgentProfile = $(By.xpath("//*[@class='header-top-right']//a[contains(text(),'Logout')]"));
     private SelenideElement goToSellertProfile = $(By.xpath("//*[@class='header-top-right']//a[contains(text(),'Profile')]"));
-    private  SelenideElement currentLocationInHeader=$(By.xpath("//*[@class='header-top-row']//*[@class='click-text current_position_matches']"));
+    private SelenideElement currentLocationInHeader=$(By.xpath("//*[@class='header-top-row']//*[@class='click-text current_position_matches']"));
     private SelenideElement chooseLocationFromList=$(By.xpath("//*[@class='header-top-row']//*[@class='cityChoose-block-name change_location']//a[1]"));
     private SelenideElement inputLacationField=$(By.xpath("//*[@class='header-top-row']//*[@id='change_city_0']"));
-    private  SelenideElement submitlocationBTN=$(By.xpath("//*[@class='header-top-row']//*[text()='Submit']"));
-    private  SelenideElement selectHighlightedLocation=$(By.xpath("//*[@class='header-top-row']//*[@class='select2-highlighted']"));
-    private  SelenideElement listForFreeBTN=$(By.xpath("//*[@class='btn btn-lg orange']//*[contains(text(),'List for free')]"));
-    private  SelenideElement checkEmailAlert=$(By.xpath("//*[@class='content']//*[@class='message-wrapp']"));
+    private SelenideElement submitlocationBTN=$(By.xpath("//*[@class='header-top-row']//*[text()='Submit']"));
+    private SelenideElement selectHighlightedLocation=$(By.xpath("//*[@class='header-top-row']//*[@class='select2-highlighted']"));
+    private SelenideElement listForFreeBTN=$(By.xpath("//*[@class='btn btn-lg orange']//*[contains(text(),'List for free')]"));
+    private SelenideElement checkEmailAlert=$(By.xpath("//*[@class='content']//*[@class='message-wrapp']"));
 
     public void assertAlert(){
 

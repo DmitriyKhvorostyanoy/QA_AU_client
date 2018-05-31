@@ -12,7 +12,7 @@ public class SearchPage {
     private SelenideElement areaModifyField = $(By.xpath("//input[@id='update_query']"));
     private SelenideElement step1Buy  = $(By.xpath("//div[@id='step_1']//*[@alt='Buy']"));
     private SelenideElement step2FamilyHome = $(By.xpath("//div[@id='step_2']//*[@alt='Family Home']"));
-    private SelenideElement step3Value99999 = $(By.xpath("//div[@id='step_3']//*[contains(text(),'$99.999 or less')]"));
+    private SelenideElement step3Value99999 = $(By.xpath("//div[@id='step_3']//*[text()='$99,999 or less']"));
     private SelenideElement step4ASAP = $(By.xpath("//div[@id='step_4']//*[contains(text(),'ASAP')]"));
     private SelenideElement step5OnlyBuying = $(By.xpath("//div[@id='step_5']//span[contains(text(),'Only Buying')]"));
     private SelenideElement step5AddStepFamily = $(By.xpath("//div[@id='step_5']//span[contains(text(),'Family')]"));
