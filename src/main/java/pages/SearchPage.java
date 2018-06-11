@@ -33,7 +33,7 @@ public class SearchPage {
     private SelenideElement potentialMatchesSideBTN = $(By.xpath("//*[@class='match-button']"));
     private SelenideElement agentInModifyedArea = $(By.xpath("//*[contains(text(),'Vladd Dneprov')]"));
     private SelenideElement privateAgent=$(By.xpath("//*[@class='search-matches-img ']//*[text()='Private Agent']"));
-    private  SelenideElement publicAgent=$(By.xpath("//*[@class='search-matches-img ']//*[text()='Test Ermolov']"));
+    private SelenideElement publicAgent=$(By.xpath("//*[@class='search-matches-img ']//*[text()='Test Ermolov']"));
 
     private SelenideElement propTypeStep1=$(By.xpath("//*[text()='Commercial']/preceding-sibling::a"));
     private  SelenideElement propValueStep2=$(By.xpath("//*[contains(text(),'million')]/parent::a"));

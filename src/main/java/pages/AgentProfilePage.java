@@ -279,7 +279,7 @@ public class AgentProfilePage {
     public void fillListingPriceField(String text) {
         listingPriceField.clear();
         listingPriceField.sendKeys(text);
-       // selectHighlitghtedAdress.shouldBe(visible);
+        // selectHighlitghtedAdress.shouldBe(visible);
       //  selectHighlitghtedAdress.click();
     }
 
@@ -290,7 +290,6 @@ public class AgentProfilePage {
     }
     public void clickSaveButton() throws InterruptedException {
         buttonSavePropertyAddForm.click();
-
         btnClosePropertyAddForm.shouldBe(visible);
        // Thread.sleep(3000);
     }

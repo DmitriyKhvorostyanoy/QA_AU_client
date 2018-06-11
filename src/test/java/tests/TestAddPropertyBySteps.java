@@ -6,6 +6,7 @@ import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 import io.qameta.allure.junit4.DisplayName;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import pages.*;
 
@@ -38,7 +39,7 @@ public class TestAddPropertyBySteps extends BaseTest{
        // agentProfilePage.clickListYourPropertyBtn();
     }
 
-
+    @Ignore
     @DisplayName("Adding a property by buyer/seller")
     @Description("Passing thru 6 steps of process of adding property")
     @Severity(SeverityLevel.CRITICAL)
