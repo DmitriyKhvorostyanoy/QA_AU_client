@@ -107,7 +107,7 @@ public class AddPropertyPage {
         listingDateInDatePicker.shouldBe(visible).click();
         btnNextStep3.click();
 
-    }
+      }
 
     public void step4() throws InterruptedException {
         Selenide.executeJavaScript("arguments[0].scrollIntoView(true);", navsearchTabs);
@@ -125,6 +125,7 @@ public class AddPropertyPage {
             if (alertErrorsEmptyOrWrongAdress.exists()){
                 btnNextStep4.click();
         }
+
        // btnNextStep4.click();
        // Thread.sleep(99999);
 
