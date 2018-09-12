@@ -8,9 +8,9 @@ import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.$;
 
 public class AgentSearchResaltPage {
-    private SelenideElement    logedInClientName = $(By.xpath("//a[contains(text(),'Auto Test')]"));
-    private SelenideElement                               desiredAgent=$(By.xpath("//*[@class='result-table']//*[text()='Automation Bot']"));
-    private SelenideElement                                 addToMatchesDesiredAgent=$(By.xpath("//*[text()='Automation Bot']/parent::h5/following-sibling::div[@class='button-wrap']//*[text()='Add to Matches']"));
+    private SelenideElement          logedInClientName = $(By.xpath("//a[contains(text(),'Auto Test')]"));
+    private SelenideElement          desiredAgent=$(By.xpath("//*[@class='result-table']//*[text()='Automation Bot']"));
+    private SelenideElement          addToMatchesDesiredAgent=$(By.xpath("//*[text()='Automation Bot']/parent::h5/following-sibling::div[@class='button-wrap']//*[text()='Add to Matches']"));
     private SelenideElement          loggedInAgentName = $(By.xpath("//a[contains(text(),'Test Ermolov')]"));
     private SelenideElement          goToAgentProfile = $(By.xpath("//*[@class='header-top-right']//a[contains(text(),'Profile')]"));
     private SelenideElement          agentFoundByAnotherAgent=$(By.xpath("//*[@class='result-table']//*[text()='Automation Bot']"));
