@@ -34,8 +34,8 @@ public class TestAddPropertyBySteps extends BaseTest{
         mainPage.clickSubmitLoginButton();
        // mainPage.moveTologgedInSellerName();
        // mainPage.clickProfileAndGoToAgentPage();
-        //1223
-        //321123
+        //123
+        //321
         mainPage.clickListForFree();
        // agentProfilePage.clickListYourPropertyBtn();
     }
