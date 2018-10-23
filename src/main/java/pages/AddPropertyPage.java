@@ -147,7 +147,7 @@ public class AddPropertyPage {
     public SinglePropertyPage step6AndGoTosinglPropertyPage(){
         payBtn.shouldBe(enabled).click();
 
-        viewYourFreeListing.waitUntil(enabled,20000).click();
-        return page(SinglePropertyPage.class);
+       // viewYourFreeListing.waitUntil(enabled,20000).click();
+        //return page(SinglePropertyPage.class);
     }
 }
