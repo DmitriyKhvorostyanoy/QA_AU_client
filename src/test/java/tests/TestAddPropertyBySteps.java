@@ -38,6 +38,7 @@ public class TestAddPropertyBySteps extends BaseTest{
         //321
         mainPage.clickListForFree();
        // agentProfilePage.clickListYourPropertyBtn();
+        //
     }
 
     //@Ignore
