@@ -16,6 +16,7 @@ public class BaseTest {
        SelenideLogger.addListener("allure", new AllureSelenide());
 
        System.setProperty("selenide.browser", "chrome");
+       Configuration.browserSize = "1920x1080";
        Configuration.timeout = 15000;
         //clear cache
         clearBrowserCache();

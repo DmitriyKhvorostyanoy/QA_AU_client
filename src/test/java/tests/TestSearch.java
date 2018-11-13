@@ -29,6 +29,7 @@ AgentSearchResaltPage  agentSearchResaltPage;
 
         clearBrowserCache();
         Configuration.timeout = 15000;
+        Configuration.browserSize = "1920x1080";
         open("https://advantageu.realagentpro.com");
 
         mainPage.enterSearchArea("anchorage,AK");
