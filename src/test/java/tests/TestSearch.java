@@ -13,18 +13,18 @@ import static com.codeborne.selenide.WebDriverRunner.clearBrowserCache;
 
 public class TestSearch {
     public Number randomS = Math.random() * 10000;
-    public String str = new String();
-
+   public long now=System.currentTimeMillis();
 
 
     MainPage mainPage;
     SearchPage searchPage;
-AgentSearchResaltPage  agentSearchResaltPage;
+    AgentSearchResaltPage agentSearchResaltPage;
+
     @Before
     public void searchSteps() {
-        mainPage=new MainPage();
-        searchPage=new SearchPage();
-        agentSearchResaltPage=new AgentSearchResaltPage();
+        mainPage = new MainPage();
+        searchPage = new SearchPage();
+        agentSearchResaltPage = new AgentSearchResaltPage();
         System.setProperty("selenide.browser", "chrome");
 
         clearBrowserCache();
@@ -39,34 +39,34 @@ AgentSearchResaltPage  agentSearchResaltPage;
 
     @Test
     public void invalidEmailCreatingUaccountBySearch() throws InterruptedException {
-        searchPage.fillEmailField("autotest"+ randomS.toString() + "2@list.ruu");
-        searchPage.fillPhoneField("1111111111");
-        searchPage.fillUserFirstName("Auto");
-        searchPage.fillUserlastName("Test");
-        searchPage.clickGenerateMatchesButton();
-        searchPage.alertMassageWrongEmail();
+        searchPage.fillEmailField("autotest" + randomS.toString() + "2@list.ruu")
+                .fillPhoneField("1111111111")
+                .fillUserFirstName("Auto")
+                .fillUserlastName("Test")
+                .clickGenerateMatchesButton()
+                .alertMassageWrongEmail();
     }
 
     @Test
     public void searchMain() throws InterruptedException {
-        searchPage.fillEmailField("testermolov+"+ randomS.toString() + "@gmail.com");
-        searchPage.fillPhoneField("1234567890");
-        searchPage.fillUserFirstName("Auto");
-        searchPage.fillUserlastName("Test");
-        searchPage.clickGenerateMatchesButton();
-       agentSearchResaltPage.assertCreatedAccountname();
+        searchPage.fillEmailField("testermolov+" + randomS.toString() + "@gmail.com")
+                .fillPhoneField("1234567890")
+                .fillUserFirstName("Auto")
+                .fillUserlastName("Test")
+                .clickGenerateMatchesButton();
+        agentSearchResaltPage.assertCreatedAccountname();
 
     }
 
     @Test
-    public void modifySearch() throws InterruptedException  {
-        searchPage.fillAreaModifyField("Honolulu, HI");
-        searchPage.changeRole();
-        searchPage.changePropertyType();
-        searchPage.changeValue();
-        searchPage.changeTimeframe();
-        searchPage.modifySearchAndSeeMatches();
-        searchPage.assertChanges();
+    public void modifySearch() throws InterruptedException {
+        searchPage.fillAreaModifyField("Honolulu, HI")
+                .changeRole()
+                .changePropertyType()
+                .changeValue()
+                .changeTimeframe()
+                .modifySearchAndSeeMatches()
+                .assertChanges();
     }
 
 }
